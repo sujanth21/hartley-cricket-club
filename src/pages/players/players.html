@@ -1,0 +1,22 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title text-center>Grades</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h5>Select year to view players statistics</h5>
+  <ion-list>
+    <button ion-item *ngFor="let playerGroup of playerCollection" 
+    [navPush]="playerListPage" 
+    [navParams]="playerGroup">
+      <ion-icon name="{{ playerGroup.icon }}" item-left></ion-icon>
+      <h4>{{ playerGroup.year | uppercase }}</h4>
+      <p>{{ playerGroup.players.length}} players</p>
+    </button>
+  </ion-list>
+</ion-content>

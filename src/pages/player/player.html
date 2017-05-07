@@ -1,0 +1,92 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{ player.name }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <ion-card>
+
+    <img src="{{ player.image }}"/>
+
+    <ion-card-content>
+      <ion-card-title>{{ player.name }}</ion-card-title>
+      <p> {{ player.description }}</p>
+    </ion-card-content>
+
+    <ion-item>
+      <ion-icon name='play' item-left style="color:#55acee"></ion-icon><h4>Total Matches: {{ player.matches }}</h4>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='body' item-left style="color:#55acee"></ion-icon><h4>Position: {{ player.position }}</h4>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon name='medal' item-left style="color:#55acee"></ion-icon><h4>Rank: {{ player.rank }}</h4>
+    </ion-item>
+
+
+    <ion-item>
+      <h2>Batting Statistics</h2>
+      <ion-row>
+        <ion-col col-9><h4>Total Runs:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.total_runs }}</h4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-9><h4>Highest Score:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.highest_score }}</h4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-9><h4>Batting Average:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.batting_average }}</h4></ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <h2>Bowling Statistics</h2>
+      <ion-row>
+        <ion-col col-9><h4>Bowling Overs:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.bowling_overs }}</h4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-9><h4>Total Wickets:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.total_wickets }}</h4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-9><h4>Best Bowling:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.best_bowling }}</h4></ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      <h2>Fielding Statistics</h2>
+      <ion-row>
+        <ion-col col-9><h4>Total Catches:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.total_catches }}</h4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-9><h4>Total Runouts:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.total_runouts }}</h4></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-9><h4>Total Stumpings:</h4></ion-col>
+        <ion-col col-3><h4>{{ player.total_stumpings }}</h4></ion-col>
+      </ion-row>
+    </ion-item>
+
+    <ion-item>
+      Awards: <ion-badge item-right>{{ player.awards }}</ion-badge>
+    </ion-item>
+
+    <ion-item>
+      Other Clubs: {{ player.other_clubs }}
+    </ion-item>
+
+  </ion-card>
+
+</ion-content>
