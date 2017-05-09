@@ -2,21 +2,28 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title text-center>Grades</ion-title>
+    <ion-title text-center>Seasons</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <h5>Select year to view players statistics</h5>
-  <ion-list>
-    <button ion-item *ngFor="let playerGroup of playerCollection" 
-    [navPush]="playerListPage" 
-    [navParams]="playerGroup">
-      <ion-icon name="{{ playerGroup.icon }}" item-left></ion-icon>
-      <h4>{{ playerGroup.year | uppercase }}</h4>
-      <p>{{ playerGroup.players.length}} players</p>
-    </button>
-  </ion-list>
+  <ion-card>
+    <ion-card-title padding text-center><h3>Select season to view players statistics</h3></ion-card-title>
+    <ion-card-content>
+      <ion-list>
+        <button ion-item *ngFor="let playerGroup of playerCollection" 
+          [navPush]="playerListPage" 
+          [navParams]="playerGroup">
+        <ion-thumbnail item-left>
+          <img src="{{ playerGroup.icon }}">
+        </ion-thumbnail>
+        <h4>{{ playerGroup.year | uppercase }}</h4>
+        <p>{{ playerGroup.players.length}} players</p>
+        </button>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <img src="assets/images/prize.png" alt="" style="margin: auto auto; display:block">
 </ion-content>
